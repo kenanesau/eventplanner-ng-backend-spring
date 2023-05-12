@@ -20,7 +20,4 @@ public class Place {
     private Boolean locked;
 
     private String lockedComment;
-
-    @JsonView(Views.UserEventView.class)
-    private byte[] image;
 }
