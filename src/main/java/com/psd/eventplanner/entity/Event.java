@@ -16,6 +16,7 @@ public class Event {
     @Id
     @JsonView(Views.UserEventView.class)
     private Long id;
+    @JsonView(Views.UserEventView.class)
     private String name;
     @JsonView(Views.UserEventView.class)
     private Date startTime;
