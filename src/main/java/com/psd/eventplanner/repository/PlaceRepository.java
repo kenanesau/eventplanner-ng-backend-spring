@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PlaceRepository extends JpaRepository<Place, Long> {
     public abstract Place findPlaceById(Long id);
+    public abstract Place findPlaceByName(String name);
 }

@@ -14,6 +14,7 @@ import java.util.List;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Event {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonView(Views.UserEventView.class)
     private Long id;
     @JsonView(Views.UserEventView.class)

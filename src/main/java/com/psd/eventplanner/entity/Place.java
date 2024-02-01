@@ -11,13 +11,16 @@ import lombok.Setter;
 @Entity
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Place {
+    @JsonView(Views.UserEventView.class)
     @Id
     Long id;
 
     @JsonView(Views.UserEventView.class)
     private String name;
 
+    @JsonView(Views.UserEventView.class)
     private Boolean locked;
 
+    @JsonView(Views.UserEventView.class)
     private String lockedComment;
 }

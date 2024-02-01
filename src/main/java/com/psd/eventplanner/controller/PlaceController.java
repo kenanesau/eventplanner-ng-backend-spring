@@ -20,7 +20,7 @@ public class PlaceController {
         this.placeRepo = placeRepo;
     }
 
-    @GetMapping(value = "/getAll/")
+    @GetMapping(value = "/")
     public List<Place> listAllPlaces() {
         return placeRepo.findAll();
     }
