@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.psd.eventplanner.entity.Event;
 import com.psd.eventplanner.entity.Views;
 import com.psd.eventplanner.repository.PlaceRepository;
+import com.psd.eventplanner.service.CollisionDetectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,10 +17,13 @@ public class EventController {
     private final com.psd.eventplanner.controller.admin.EventController adminEventCtrl;
     private final PlaceRepository placeRepository;
 
+    private final CollisionDetectionService collisionDetectionService;
+
     @Autowired
-    public EventController(com.psd.eventplanner.controller.admin.EventController adminEventCtlr, PlaceRepository placeRepository) {
+    public EventController(com.psd.eventplanner.controller.admin.EventController adminEventCtlr, PlaceRepository placeRepository, CollisionDetectionService collisionDetectionService) {
         this.adminEventCtrl = adminEventCtlr;
         this.placeRepository = placeRepository;
+        this.collisionDetectionService = collisionDetectionService;
     }
 
     @GetMapping("/")
@@ -42,9 +46,15 @@ public class EventController {
         adminEventCtrl.createEvent(event);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/edit/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void editEvent(@PathVariable long id, @RequestBody Event event) {
         adminEventCtrl.editEvent(id, event);
+    }
+
+    @PostMapping("/checkcollisions")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public List<Event> checkEventCollisions(@RequestBody Event newEvent) {
+        return collisionDetectionService.detectCollissions(newEvent);
     }
 }

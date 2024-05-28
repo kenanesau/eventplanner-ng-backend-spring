@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.psd.eventplanner.entity.Event;
 import com.psd.eventplanner.entity.Views;
 import com.psd.eventplanner.repository.EventRepository;
+import com.psd.eventplanner.service.CollisionDetectionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,9 +16,11 @@ public class EventController {
     public static final String ROOT = "/";
 
     private final EventRepository eventRepository;
+    private final CollisionDetectionService collisionDetectionService;
 
-    public EventController(EventRepository eventRepository) {
+    public EventController(EventRepository eventRepository, CollisionDetectionService collisionDetectionService) {
         this.eventRepository = eventRepository;
+        this.collisionDetectionService = collisionDetectionService;
     }
 
     @GetMapping(ROOT)
