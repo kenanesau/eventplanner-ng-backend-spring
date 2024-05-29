@@ -49,13 +49,9 @@ public class EventController {
     @PutMapping("{id}")
     @ResponseStatus(HttpStatus.OK)
     public void editEvent(@PathVariable long id, @RequestBody Event event) {
-        Event ev = eventRepository
-                .findById(id)
-                .orElseThrow( () -> new RuntimeException("No Event with that id") );
-        event.setId(id);
-        event.setPlaces(ev.getPlaces());
+        eventRepository
+            .findById(id)
+            .orElseThrow( () -> new RuntimeException("No Event with that id") );
         eventRepository.save(event);
     }
-
-
 }
