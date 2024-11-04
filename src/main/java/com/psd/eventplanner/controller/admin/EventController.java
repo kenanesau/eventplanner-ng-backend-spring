@@ -42,7 +42,6 @@ public class EventController {
     @PostMapping(ROOT)
     @ResponseStatus(HttpStatus.CREATED)
     public void createEvent(@RequestBody Event event) {
-
         eventRepository.save(event);
     }
 

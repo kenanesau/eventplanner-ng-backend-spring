@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.test.context.ContextConfiguration;
 
 import javax.sql.DataSource;
 
@@ -16,6 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 @DataJpaTest
+@ContextConfiguration(classes = {com.psd.eventplanner.EventPlannerBackendApplication.class})
 class JPATest {
 
     @Autowired private JdbcTemplate jdbcTemplate;
