@@ -4,9 +4,9 @@ INSERT INTO place (id, name, locked, locked_comment) VALUES (2, 'Scheune', false
 INSERT INTO place (id, name, locked, locked_comment) VALUES (3, 'Pferdestall', false, NULL);
 
 --Customers
-INSERT INTO customer (id, first_name, last_name, email) VALUES (1, 'Max', 'Mustermann', 'max.mustermann@web.de');
-INSERT INTO customer (id, first_name, last_name, email) VALUES (2, 'Richard', 'Löwenherz', 'richard.loewenh@gmail.com');
-INSERT INTO customer (id, first_name, last_name, email) VALUES (3, 'Richard', 'Müller', 'muellerchen@t-online.de');
+INSERT INTO customer (first_name, last_name, email) VALUES ('Max', 'Mustermann', 'max.mustermann@web.de');
+INSERT INTO customer (first_name, last_name, email) VALUES ('Richard', 'Löwenherz', 'richard.loewenh@gmail.com');
+INSERT INTO customer (first_name, last_name, email) VALUES ('Richard', 'Müller', 'muellerchen@t-online.de');
 
 --Events
 INSERT INTO event_table (name, start_time, end_time, customer_id) VALUES ('Geburtstag', '2022-05-02 12.00.00', '2022-05-02 15.00.00', 1);
