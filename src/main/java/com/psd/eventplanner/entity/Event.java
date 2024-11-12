@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity @Table(name="event_table")
@@ -17,9 +17,9 @@ public class Event {
     @JsonView(Views.UserEventView.class)
     private String name;
     @JsonView(Views.UserEventView.class)
-    private Date startTime;
+    private LocalDateTime startTime;
     @JsonView(Views.UserEventView.class)
-    private Date endTime;
+    private LocalDateTime endTime;
 
     @OneToOne
     private Customer customer;

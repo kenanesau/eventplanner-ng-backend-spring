@@ -1,0 +1,50 @@
+[
+  {
+    "endTime": "2022-05-02T15:00:00",
+    "id": 1,
+    "name": "Geburtstag",
+    "places": [
+      {
+        "id": 1,
+        "locked": false,
+        "lockedComment": null,
+        "name": "Schlossplatz"
+      },
+      {
+        "id": 2,
+        "locked": false,
+        "lockedComment": null,
+        "name": "Scheune"
+      }
+    ],
+    "startTime": "2022-05-02T12:00:00"
+  },
+  {
+    "endTime": "2022-05-04T12:30:00",
+    "id": 2,
+    "name": "Grillen",
+    "places": [
+      {
+        "id": 1,
+        "locked": false,
+        "lockedComment": null,
+        "name": "Schlossplatz"
+      }
+    ],
+    "startTime": "2022-05-03T22:00:00"
+  },
+  {
+    "endTime": "2022-05-07T11:00:00",
+    "id": 3,
+    "name": "Jugendweihe",
+    "places": [
+      {
+        "id": 2,
+        "locked": false,
+        "lockedComment": null,
+        "name": "Scheune"
+      }
+    ],
+    "startTime": "2022-05-05T22:00:00"
+  }
+]

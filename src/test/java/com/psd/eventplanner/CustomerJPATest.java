@@ -23,7 +23,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
 @ContextConfiguration(classes = {com.psd.eventplanner.EventPlannerBackendApplication.class})
-class JPATest {
+class CustomerJPATest {
 
     @Autowired private JdbcTemplate jdbcTemplate;
     @Autowired private EntityManager entityManager;

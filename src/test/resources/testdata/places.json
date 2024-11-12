@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Schlossplatz",
+    "locked": false,
+    "lockedComment": null
+  },
+  {
+    "id": 2,
+    "name": "Scheune",
+    "locked": false,
+    "lockedComment": null
+  },
+  {
+    "id": 3,
+    "name": "Pferdestall",
+    "locked": false,
+    "lockedComment": null
+  },
+  {
+    "id": 4,
+    "name": "Ballsaal",
+    "locked": true,
+    "lockedComment": "Reparaturarbeiten bis Ende Dezember"
+  }
+]
