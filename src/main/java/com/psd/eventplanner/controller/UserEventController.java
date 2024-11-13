@@ -1,4 +1,4 @@
-package com.psd.eventplanner.controller.user;
+package com.psd.eventplanner.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.psd.eventplanner.entity.Event;
@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("userEventController")
-@RequestMapping("user/events")
-public class EventController {
-    private final com.psd.eventplanner.controller.admin.EventController adminEventCtrl;
+@RestController
+@RequestMapping("/user/events")
+public class UserEventController {
+    private final AdminEventController adminEventCtrl;
     private final PlaceRepository placeRepository;
 
     private final CollisionDetectionService collisionDetectionService;
 
     @Autowired
-    public EventController(com.psd.eventplanner.controller.admin.EventController adminEventCtlr, PlaceRepository placeRepository, CollisionDetectionService collisionDetectionService) {
+    public UserEventController(AdminEventController adminEventCtlr, PlaceRepository placeRepository, CollisionDetectionService collisionDetectionService) {
         this.adminEventCtrl = adminEventCtlr;
         this.placeRepository = placeRepository;
         this.collisionDetectionService = collisionDetectionService;

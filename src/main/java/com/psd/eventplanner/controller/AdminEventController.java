@@ -1,4 +1,4 @@
-package com.psd.eventplanner.controller.admin;
+package com.psd.eventplanner.controller;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.psd.eventplanner.entity.Event;
@@ -10,21 +10,23 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("adminEventController")
+@RestController
 @RequestMapping("admin/events")
-public class EventController {
+public class AdminEventController {
     public static final String ROOT = "/";
 
     private final EventRepository eventRepository;
     private final CollisionDetectionService collisionDetectionService;
 
-    public EventController(EventRepository eventRepository, CollisionDetectionService collisionDetectionService) {
+    public AdminEventController(EventRepository eventRepository, CollisionDetectionService collisionDetectionService) {
         this.eventRepository = eventRepository;
         this.collisionDetectionService = collisionDetectionService;
     }
 
     @GetMapping(ROOT)
-    public List<Event> getAll() { return this.eventRepository.findAll(); }
+    public List<Event> getAll() {
+        return this.eventRepository.findAll();
+    }
 
     @GetMapping("/{id}")
     @JsonView(Views.UserEventView.class)
